@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Usuario</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form method="post" action="https://www.w3schools.com/action_page.php" class="Formulario">
+        <fieldset>
+            <legend>Datos Usuario</legend>
+            <label for ="Nombre">Nombre de Usuario</label>
+            <input type="text" id="Nombre De Usuario" name="Nombre de Usuario" placeholder="Introduce Nombre" required>
+
+            <label for ="Contraseña">Contraseña</label>
+            <input type="password" id="Contraseña" name="Contraseña" placeholder="Introduce Contraseña" required>
+            <label>
+                <input type="checkbox" id="Mostrar Contraseña">Mostrar Contraseña
+            </label>
+        </fieldset>
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <label for="NombrePersonal">Nombre</label>
+            <input type="text" id="Nombre Personal" name="Nombre Personal" placeholder="Introduce Nombre Personal" required>
+
+            <label for="Apellido">Apellidos</label>
+            <input type="text" id="Apellido" name="Apellido" placeholder="Introduce Apellido" required>
+
+            <label for="Teléfono">Teléfono</label>
+            <input type="tel" id="Teléfono" name="Teléfono" placeholder="Ejem: (+34)922010592" required>
+
+            <label for="CódigoPostal">Código Postal</label>
+            <input type="text" id="CódigoPostal" name="CódigoPostal" placeholder="38XXX" required>
+
+            <label for="dni">DNI/NIE</label>
+            <select id="dni" name="dni" required>
+                <option value="dni">DNI</option>
+                <option value="nie">NIE</option>
+            </select>
+            <input type="text" id="dninie" name="dni/nie" placeholder="Ejem 79093727Q" required>
+
+            <label>Crear cuenta como:</label>
+            <label><input type="radio" name="radio" value="particular" required>particular</label>
+            <label><input type="radio" name="radio" value="empresa" required>empresa</label>
+
+            <label for="AñoNacimiento">Año De Nacimiento</label>
+            <select id="AñoNacimiento" name="AñoNacimiento" required>
+                <option value="2002" selected>2007</option>
+                <option value="2001">2006</option>
+                <option value="2001">2005</option>
+                <option value="2001">2004</option>
+                <option value="2001">2003</option>
+                <option value="2001">2002</option>
+                <option value="2001">2001</option>
+            </select>
+
+            <fieldset>
+                <legend>Elige tus aficiones:</legend>
+                <label><input type="checkbox" name="hobbies" value="musica"> Música</label>
+                <label><input type="checkbox" name="hobbies" value="deporte"> Deporte</label>
+                <label><input type="checkbox" name="hobbies" value="videojuegos"> Video Juegos</label>
+                <label><input type="checkbox" name="hobbies" value="manualidades"> Manualidades</label>
+                <label><input type="checkbox" name="hobbies" value="artes"> Artes</label>
+                <label><input type="checkbox" name="hobbies" value="lectura"> Lectura</label>
+            </fieldset>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos publicación</legend>
+            <label for="Titulo">Título</label>
+            <input type="text" id="Titulo" name="Titulo" placeholder="Título" maxlength="15" required>
+
+            <label for="descripcion">Descripción</label>
+            <textarea id="descripcion" name="descripcion" placeholder="Descripción" maxlength="120" required></textarea>
+        </fieldset>
+
+        <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+</body>
+</html>
