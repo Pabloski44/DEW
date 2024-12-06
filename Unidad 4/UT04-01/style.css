@@ -1,99 +1,136 @@
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-    background-color: #f9f9f9;
+.div-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-form {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
+button {
+    border: solid;
+    border-radius: 1rem;
+    border-width: 0.1rem;
+    margin-top: 1rem;
+  }
 
-/* Fieldset and Legend */
-fieldset {
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 20px;
-}
+  input:invalid {
+    border: 2px solid red;
+  }
 
-legend {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #333;
-    padding: 0 10px;border-bottom: 3px solid black;
-}
-
-/* Labels and Inputs */
-label {
+  input:invalid + .mensaje-error {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+
+  input:valid + .mensaje-error {
+    display: none;
+  }
+
+
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-input, select, textarea {
-    width: calc(50% - 10px); /* Adjusts input width */
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.error {
+    color: red;
     font-size: 14px;
-    box-sizing: border-box;
+    display: none;  
+}
+
+.usuario {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+}
+
+.usuario div {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+}
+
+.usuario div div {
+    display: flex;
+    flex-direction: row;
+}
+
+.datos-personales {
+    display: flex;
+    flex-direction: column;
+}
+
+.personal label {
+    display: block;
+}
+
+.personal {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; 
+}
+
+.personal div {
+    padding: 1rem;
+}
+
+.personal2 {
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+}
+
+.personal2 > div {
+    margin-right: 1rem;
+}
+
+.personal2 select {
+    margin-left: 1rem;
+}
+
+.cuenta{
+    display: flex;
+    flex-direction: row;
+}
+
+.text-area {
+    display: flex;
+    flex-direction: column;
 }
 
 textarea {
-    width: 100%;
-    height: 80px;
+    width: 625px; height: 155px;
     resize: none;
 }
 
-/* Group Styles for Two Columns */
-input[type="radio"], input[type="checkbox"] {
-    width: auto;
-    margin-right: 5px;
+input, textarea{
+    border-radius: 0.5rem;
+    padding: 0.2rem;
 }
 
-label[for="Mostrar Contraseña"] {
-    display: inline-block;
+.eleccion-aficiones{
+    display: grid;
+    flex-direction: repeat(3, 1fr);
+    gap: 2rem;
 }
 
-fieldset > fieldset {
-    margin-top: 10px;
-    border: none;
-    padding: 0;
+.eleccion-aficiones div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap:1rem;
 }
 
-/* Form Layout */
-input[type="text"], input[type="password"], input[type="tel"], select {
-    display: inline-block;
-    margin-right: 10px;
+.word {
+    justify-content: end;
 }
 
-input[type="text"]:nth-child(even), input[type="tel"]:nth-child(even) {
-    margin-right: 0;
-}
+.div-error{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
-/* Button Styles */
-button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: black;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-button:hover {
-    background-color: black;
 }
