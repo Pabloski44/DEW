@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Usuario</title>
+    <link rel="stylesheet" href="/UT04-01/style.css">
+</head>
+<body>
+    <div class="div-main">
+        <form method="post" action="https://www.w3schools.com/action_page.php" class="Formulario">
+            <fieldset>
+            <div class="datos-usuario">
+                <legend>Datos Usuario</legend>
+                <hr>
+                <div class="usuario">
+                    <div>
+                        <label for ="Nombre">Nombre de Usuario</label>
+                        <input type="text" id="NombreUsuario" name="NombreUsuario" placeholder="Introduce Nombre" minlength="4" maxlength="20" required>
+                        <span class="mensaje-error">Campo obligatorio</span>
+                    </div>
+                    <div>
+                        <label for ="Contraseña">Contraseña</label>
+                        <input type="password" id="Contrasena" name="Contrasena" placeholder="Introduce Contraseña" pattern="[0-9]{8}" required>
+                        <span class="mensaje-error">Campo obligatorio</span>
+                        <div>
+                            <input onchange="mostrarPassword()" id="checkpass" name="checkpass" type="checkbox">
+                            <label id="checkpassLabel" for="checkpass">Mostrar Contraseña</label>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="datos-personales">
+                <legend>Datos Personales</legend>
+                <hr>
+                <div class="personal">
+                    <div>
+                        <label for="NombrePersonal">Nombre</label>
+                        <input type="text" id="Nombre" name="Nombre" placeholder="Introduce Nombre Personal" minlength="4" maxlength="20" required>
+                        <span class="mensaje-error">Campo obligatorio</span>
+                    </div>
+                    <div>
+                        <label for="Apellido">Apellidos</label>
+                        <input type="text" id="Apellidos" name="Apellidos" placeholder="Introduce Apellido" minlength="4" maxlength="20" required>
+                        <span class="mensaje-error">Campo obligatorio</span>
+                    </div>
+                </div>
+                <div class="personal">
+                    <div>
+                        <label for="Teléfono">Teléfono</label>
+                        <input type="telInput" id="Telefono" name="Telefono" placeholder="Ejem: (+34)922010592"  pattern="\(\+34\)922[0-9]{6}" maxlength="14" required>
+                        <span class="mensaje-error">Campo obligatorio</span>
+                    </div>
+                    <div>
+                        <label for="CódigoPostal">Código Postal</label>
+                        <input type="text" id="CodigoPostal" name="CodigoPostal" placeholder="38XXX" pattern="38[0-9]{3}" required>
+                        <span class="mensaje-error">Campo obligatorio</span>
+                    </div>
+                </div>
+                <div class="personal2">
+                    <div>
+                        <label for="dni">DNI/NIE</label>
+                        <span class="error" id="errordni"></span>
+                        <div>
+                            <select id="stateSelect" onchange="ChangeState()" name="Documento"
+                                class="select-dni" required>
+                                <option value="none" hidden selected>---</option>
+                                <option value="DNI">DNI</option>
+                                <option value="NIE">NIE</option>
+                            </select>
+                            <input type="text" id="DNI" name="DNINIE" placeholder="DNI/NIE" disabled maxlength="9" required>
+                        </div>   
+                        <span id="errorDNINIE"></span>
+                    </div>
+                    <div>
+                        <label for="cuenta">Crear cuenta como:</label>
+                        <div class="cuenta">
+                            <input name="Cuenta" value="Particular" type="radio">
+                            <label for="Cuenta">Particular</label>
+                                <input name="Cuenta" value="Empresa" type="radio">
+                                <label for="Cuenta">Empresa</label>
+                        </div>
+                        <span id="errorcuenta" class="error"></span>
+                    </div>
+                    <div>
+                        <label for="anio">Año de Nacimiento</label>
+                        <select id="selecionar-anio" name="AnioNacimiento" required>
+                            <option value="" hidden selected>Seleciona un año</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="eleccion-aficiones">
+                    <label>Eliga sus aficiones:</label>
+                    <div>
+                        <input type="checkbox" id="aficion1" name="Aficiones" value="Musica">
+                        <label for="Aficiones1">Música</label>
+                        <input type="checkbox" id="aficion2" name="Aficiones" value="Manualidades">
+                        <label for="Aficiones2">Manualidades</label>
+                        <input type="checkbox" id="aficion3" name="Aficiones" value="Deportes">
+                        <label for="Aficiones3">Deporte</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="aficion4" name="Aficiones" value="Artes">
+                        <label for="Aficiones4">Artes</label>
+                        <input type="checkbox" id="aficion5" name="Aficiones" value="Videojuegos" >
+                        <label for="Aficiones5">Videojuegos</label>
+                        <input type="checkbox" id="aficion6" name="Aficiones" value="Lectura" >
+                        <label for="Aficiones6">Lectura</label>
+                    </div>
+                    <input type="hidden" id="Formato-Aficiones" name="Aficiones">
+                </div>
+                <span id="errorCheck" class="error"></span>
+                <div class="datos-publicacion">
+                    <legend>Datos Publicación</legend>
+                    <hr>
+                    <div class="text-area">
+                        <label for="PublicacionTitulo">Título</label>
+                        <input type="text" id="title" name="PublicacionTitulo"  minlength="4" maxlength="15" placeholder="Título" required>
+                        <span class="error-message">Campo obligatorio</span>
+                        <span id="titleCount">0/15</span>
+                        <label for="PublicacionDescripcion" rows="4" cols="40">Descripcion</label>
+                        <textarea id="area" name="PublicacionDescripcion" minlength="4" maxlength="120"
+                            required></textarea>
+                        <span class="error-message">Campo obligatorio</span>
+                        <span id="areaCount">0/120</span>
+                    </div>
+                </div>
+                <button type="submit">Enviar</button>
+        </fieldset>
+    </form>
+    <div id="erroresDiv" class="div-error">
+
+    </div>
+</div>
+</body>
+<script type="module" src="/UT04-01/script.js"></script>
+
+</html>
